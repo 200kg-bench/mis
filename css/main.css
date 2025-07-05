@@ -215,6 +215,7 @@ body {
     background: #667EEA;
     border-radius: 8px;
     padding: 11px 32px;
+    text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
