@@ -6,6 +6,372 @@
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <link href="./css/main.css" rel="stylesheet" />
     <title>Joel Chan - UX Designer</title>
+    <style>
+        /* Base styles for the section */
+        .featured-projects-section {
+            padding: 80px 20px; /* More vertical padding */
+            background-color: #f9f9f9; /* Light background for the section */
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px; /* More space below header */
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px; /* Space between title and description */
+            display: block;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Project Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted minmax for better flexibility */
+            gap: 40px; /* Increased gap between cards */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0; /* Remove horizontal padding here, handled by section */
+        }
+
+        /* Project Card */
+        .project-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Softer, slightly larger shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; /* Flex container for mockup and details */
+            flex-direction: column; /* Stack mockup on top of details */
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px); /* More pronounced lift */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+        }
+
+        /* Project Mockup - The 'device' container */
+        .project-mockup {
+            height: 300px; /* Fixed height for consistency */
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px; /* Padding for the inner 'screen' to breathe */
+            box-sizing: border-box; /* Include padding in height */
+        }
+
+        /* Mockup Backgrounds (unique per project) */
+        .project-card:nth-child(1) .project-mockup { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .project-card:nth-child(2) .project-mockup { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .project-card:nth-child(3) .project-mockup { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+
+        /* The actual "screen" content within the mockup */
+        .mockup-content {
+            background: rgba(255, 255, 255, 0.15); /* Slightly transparent white overlay for screen effect */
+            border-radius: 15px; /* Rounded corners for the screen */
+            padding: 20px;
+            width: 90%; /* Content takes 90% width of its container */
+            height: 100%; /* Content takes 100% height of its container */
+            max-width: 300px; /* Max width of the content area inside the mockup */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.1); /* Inner shadow for depth */
+            backdrop-filter: blur(15px); /* Stronger blur for glassmorphism */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for screen definition */
+        }
+
+        /* Specific Mobile Banking App Mockup styles */
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: white; /* Ensure header elements are visible */
+        }
+        .app-title {
+            font-weight: 600;
+            font-size: 16px; /* Slightly smaller for mockup scale */
+        }
+        .app-icon .icon-bar {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .balance-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px; /* Slightly smaller radius */
+            padding: 14px; /* Reduced padding */
+            backdrop-filter: blur(8px); /* Less blur for smaller elements */
+            margin-bottom: 12px;
+        }
+        .balance-label {
+            font-size: 13px;
+        }
+        .balance-amount {
+            font-size: 20px; /* Adjusted size */
+        }
+        .transaction-placeholders .transaction-item {
+            height: 14px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 7px;
+        }
+
+        /* E-commerce specific mockup */
+        .ecommerce-mockup {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px; /* Reduced gap */
+            flex: 1; /* Allow it to grow */
+        }
+        .product-card {
+            background: rgba(255, 255, 255, 0.15); /* Match mockup content background */
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow for product cards */
+        }
+        .product-image {
+            height: 50px; /* Reduced height */
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 6px;
+        }
+        .product-title {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            width: 85%;
+        }
+        .product-price {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+            width: 55%;
+        }
+
+        /* Learning Management System mockup */
+        .lms-mockup {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Reduced gap */
+            flex: 1; /* Allow it to grow */
+        }
+        .course-header {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 8px;
+        }
+        .course-title {
+            font-size: 15px;
+        }
+        .progress-indicator {
+            width: 35px; /* Smaller indicator */
+            height: 35px;
+            border-width: 2px;
+        }
+        .progress-indicator::after {
+            font-size: 9px;
+        }
+        .course-modules {
+            gap: 6px;
+        }
+        .module-item {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 7px;
+            padding: 10px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.08); /* Subtle shadow for module items */
+        }
+        .module-name {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            width: 100px;
+        }
+        .module-duration {
+            height: 7px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 3px;
+            width: 70px;
+        }
+        .module-status {
+            width: 14px;
+            height: 14px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Project Details (Text content below mockup) */
+        .project-details {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Allows details section to take remaining space */
+            justify-content: space-between; /* Pushes button to bottom if content varies */
+        }
+        .project-name {
+            font-size: 22px; /* Slightly larger heading for impact */
+            font-weight: 700; /* Bolder */
+            color: #333;
+            margin-bottom: 12px;
+        }
+        .project-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 15px;
+            flex-grow: 1; /* Allows description to grow and push tags/button down */
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Slightly increased gap for tags */
+            margin-top: auto; /* Pushes tags to the bottom of flexible space */
+            margin-bottom: 24px;
+        }
+        .tag {
+            padding: 8px 16px; /* Larger padding for tags */
+            border-radius: 25px; /* More rounded */
+            font-size: 13px; /* Slightly larger font */
+            font-weight: 600; /* Bolder tags */
+        }
+
+        /* Button styles (already good, just for context) */
+        .primary-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: inline-flex; /* Ensure it respects content width */
+            align-self: flex-start; /* Align button to the start within flex column */
+        }
+        .primary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        .icon-arrow-right {
+            margin-left: 8px; /* Space between text and arrow */
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns on tablets */
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .section-description {
+                font-size: 16px;
+            }
+
+            .project-mockup {
+                height: 280px; /* Slightly adjust height */
+            }
+
+            .mockup-content {
+                padding: 18px;
+            }
+
+            .project-details {
+                padding: 24px;
+            }
+            .project-name {
+                font-size: 20px;
+            }
+            .project-description {
+                font-size: 14px;
+            }
+            .tag {
+                padding: 7px 14px;
+                font-size: 12px;
+            }
+            .button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr; /* Single column on mobile */
+                gap: 24px;
+            }
+
+            .featured-projects-section {
+                padding: 60px 15px; /* Reduced padding for smaller screens */
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .section-description {
+                font-size: 15px;
+            }
+
+            .project-mockup {
+                height: 250px; /* Further reduced height for mobile */
+                padding: 15px;
+            }
+
+            .mockup-content {
+                padding: 15px;
+            }
+
+            .app-title {
+                font-size: 15px;
+            }
+            .balance-amount {
+                font-size: 18px;
+            }
+            .product-image {
+                height: 45px;
+            }
+            .course-title {
+                font-size: 14px;
+            }
+
+            .project-details {
+                padding: 20px;
+            }
+            .project-name {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+            .project-description {
+                font-size: 13px;
+                margin-bottom: 16px;
+            }
+            .project-tags {
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+            .tag {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+            .button {
+                padding: 10px 18px;
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="page-container">
@@ -25,11 +391,10 @@
                 </div>
             </nav>
         </header>
-
         <main class="hero-section">
             <div class="hero-content">
                 <div class="hero-text-container">
-                    <span class="hero-subtitle">UX Designer & Computer Science Student</span>
+                    <span class="hero-subtitle">Computer Science Student</span>
                     <span class="hero-title">Creating Digital Experiences That Matter</span>
                     <span class="hero-description">I'm passionate about designing user-centered solutions that bridge the gap between technology and human needs. Currently pursuing Computer Science while building impactful digital experiences.</span>
                 </div>
@@ -76,7 +441,6 @@
                 </div>
             </div>
         </main>
-
         <section class="featured-projects-section">
             <div class="section-header">
                 <span class="section-title">Featured Projects</span>
@@ -130,9 +494,131 @@
                         </div>
                     </div>
                 </div>
+                <div class="project-card">
+                    <div class="project-mockup">
+                        <div class="mockup-content">
+                            <div class="app-header">
+                                <span class="app-title"><a href="extracase.html">Case Studies For HCI</a></span>
+                                <div class="app-icon">
+                                    <div class="icon-bar bar-1"></div>
+                                    <div class="icon-bar bar-2"></div>
+                                    <div class="icon-bar bar-3"></div>
+                                </div>
+                            </div>
+                            <div class="ecommerce-mockup">
+                                <div class="product-card">
+                                    <div class="product-image"></div>
+                                    <div class="product-info">
+                                        <div class="product-title"></div>
+                                        <div class="product-price"></div>
+                                    </div>
+                                </div>
+                                <div class="product-card">
+                                    <div class="product-image"></div>
+                                    <div class="product-info">
+                                        <div class="product-title"></div>
+                                        <div class="product-price"></div>
+                                    </div>
+                                </div>
+                                <div class="product-card">
+                                    <div class="product-image"></div>
+                                    <div class="product-info">
+                                        <div class="product-title"></div>
+                                        <div class="product-price"></div>
+                                    </div>
+                                </div>
+                                <div class="product-card">
+                                    <div class="product-image"></div>
+                                    <div class="product-info">
+                                        <div class="product-title"></div>
+                                        <div class="product-price"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-name">Click the link to view more about my case study for HCI course</span>
+                        <span class="project-description">The case study will be about High-Fi Prototype</span>
+                        <div class="project-tags">
+                            <div class="tag orange">
+                                <span class="tag-text">UI/UX Design</span>
+                            </div>
+                            <div class="tag purple">
+                                <span class="tag-text">User Testing</span>
+                            </div>
+                            <div class="tag green">
+                                <span class="tag-text">Conversion Rate</span>
+                            </div>
+                        </div>
+                        <div class="button primary-button">
+                            <span class="button-text">View Case Study</span>
+                            <div class="icon-arrow-right">
+                                <div class="arrow-line"></div>
+                                <div class="arrow-point"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-mockup">
+                        <div class="mockup-content">
+                            <div class="course-header">
+                                <span class="course-title">Web Development</span>
+                                <div class="progress-indicator"></div>
+                            </div>
+                            <div class="lms-mockup">
+                                <div class="course-modules">
+                                    <div class="module-item">
+                                        <div class="module-info">
+                                            <div class="module-name"></div>
+                                            <div class="module-duration"></div>
+                                        </div>
+                                        <div class="module-status"></div>
+                                    </div>
+                                    <div class="module-item">
+                                        <div class="module-info">
+                                            <div class="module-name"></div>
+                                            <div class="module-duration"></div>
+                                        </div>
+                                        <div class="module-status"></div>
+                                    </div>
+                                    <div class="module-item">
+                                        <div class="module-info">
+                                            <div class="module-name"></div>
+                                            <div class="module-duration"></div>
+                                        </div>
+                                        <div class="module-status"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-name">Learning Management System</span>
+                        <span class="project-description">Designed a comprehensive learning platform that enhances student engagement through gamification, progress tracking, and personalized learning paths for online education.</span>
+                        <div class="project-tags">
+                            <div class="tag teal">
+                                <span class="tag-text">EdTech</span>
+                            </div>
+                            <div class="tag blue">
+                                <span class="tag-text">Dashboard Design</span>
+                            </div>
+                            <div class="tag red">
+                                <span class="tag-text">User Research</span>
+                            </div>
+                        </div>
+                        <div class="button primary-button">
+                            <span class="button-text">View Case Study</span>
+                            <div class="icon-arrow-right">
+                                <div class="arrow-line"></div>
+                                <div class="arrow-point"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-
         <section class="cta-section">
             <div class="cta-content">
                 <span class="cta-title">Ready to Work Together?</span>
@@ -152,7 +638,6 @@
                 </div>
             </div>
         </section>
-
         <footer class="footer">
             <div class="footer-content">
                 <div class="footer-about">

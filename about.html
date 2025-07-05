@@ -8,6 +8,145 @@
     <link href="./css/about.css" rel="stylesheet" />
     <title>Joel Chan - About Me</title>
 </head>
+<style>
+        /* Updated hobby section styles */
+        .hobby-section {
+            margin-top: 60px;
+            padding: 0 20px;
+        }
+
+        .hobby-section .section-subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .hobby-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hobby-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .hobby-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hobby-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .hobby-card:hover .hobby-card-image img {
+            transform: scale(1.05);
+        }
+
+        .hobby-card-content {
+            padding: 20px;
+        }
+
+        .hobby-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .hobby-card-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .hobby-card-icon {
+            width: 40px;
+            height: 40px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        /* Placeholder image styles for demo */
+        .hobby-placeholder-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .hobby-placeholder-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .hobby-placeholder-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .hobby-placeholder-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hobby-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .hobby-card-image {
+                height: 180px;
+            }
+        }
+</style>
 
 <body>
     <div class="page-container">
@@ -56,8 +195,8 @@
                             </div>
                             <div class="hobby-card-content">
                                 <div class="hobby-card-icon">💪</div>
-                                <h3 class="hobby-card-title">Fitness & Weightlifting</h3>
-                                <p class="hobby-card-description">Passionate about staying fit and building strength through consistent weightlifting and cardiovascular training.</p>
+                                <h3 class="hobby-card-title">Pumping Iron</h3>
+                                <p class="hobby-card-description">I like lifting heavy stuff</p>
                             </div>
                         </div>
 
