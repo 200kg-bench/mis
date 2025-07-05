@@ -4,321 +4,7 @@
     margin: 0;
     padding: 0;
 }
-/* Specific Styles for About Page */
 
-/* Make sure the about page content is centered and has appropriate padding */
-.about-page-content {
-    width: 100%;
-    padding: 80px; /* Consistent padding */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px; /* Space between main sections */
-    background-color: #F9FAFB; /* Light background for the page */
-}
-
-/* About Hero Section */
-.about-hero-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 40px;
-    max-width: 900px;
-}
-
-.about-hero-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-}
-
-.about-info-group {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.about-info-item {
-    background: #667EEA;
-    color: #FFFFFF;
-    border-radius: 6px;
-    padding: 8px 16px;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-.about-profile-image {
-    width: 160px;
-    height: 160px;
-    background: url('https://via.placeholder.com/160') no-repeat center center / cover; /* Placeholder image */
-    border-radius: 50%;
-    border: 4px solid #FFFFFF;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex; /* For centering content inside if any */
-    align-items: center;
-    justify-content: center;
-}
-
-.profile-circle {
-    /* If you have a specific design for the circle within the image */
-}
-
-.background-info-section {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-    max-width: 700px;
-}
-
-.section-subtitle {
-    color: #111827;
-    font-weight: 600;
-    font-size: 20px;
-}
-
-.background-text-placeholders {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.text-placeholder {
-    width: 100%;
-    height: 12px;
-    background-color: #E5E7EB;
-    border-radius: 4px;
-}
-
-.text-placeholder:nth-child(even) {
-    width: 95%; /* Varying line lengths for realism */
-}
-.text-placeholder:nth-child(odd) {
-    width: 98%;
-}
-.text-placeholder:last-child {
-    width: 80%;
-}
-
-
-.about-page-title {
-    color: #111827;
-    font-weight: 800;
-    font-size: 48px;
-    margin-top: 20px;
-}
-
-/* Hobby Section */
-.hobby-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    width: 100%;
-    max-width: 900px;
-}
-
-.hobby-details {
-    display: flex;
-    flex-direction: column; /* Stack by default */
-    align-items: center;
-    gap: 32px;
-    width: 100%;
-    background-color: #FFFFFF;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-.hobby-image-placeholder {
-    width: 100%;
-    max-width: 400px;
-    height: 250px;
-    background: #E5E7EB; /* Placeholder background */
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.hobby-image-content {
-    width: 90%;
-    height: 90%;
-    background: url('https://via.placeholder.com/360x225') no-repeat center center / cover; /* Example hobby image */
-    border-radius: 6px;
-}
-
-.hobby-list-placeholders {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-width: 400px; /* Limit width */
-}
-
-.hobby-list-item {
-    background-color: #F3F4F6;
-    height: 16px;
-    border-radius: 4px;
-    width: 100%;
-}
-.hobby-list-item:nth-child(odd) {
-    width: 90%;
-}
-.hobby-list-item:last-child {
-    width: 70%;
-}
-
-.hobby-icons-placeholder {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.hobby-icon {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(to right, #667EEA, #764BA2);
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.hobby-icon-inner {
-    width: 32px;
-    height: 32px;
-    background-color: #D1D5DB; /* Lighter gray for inner circles */
-    border-radius: 50%;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
-}
-
-
-/* Skills and Goals Section */
-.skills-goals-section {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap; /* Allow groups to wrap */
-    justify-content: center;
-    gap: 40px; /* Space between groups */
-    padding: 60px 0;
-    background-color: #FFFFFF; /* White background for this section */
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.03); /* Subtle shadow at the top */
-}
-
-.skill-experience-group {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: #F9FAFB;
-    padding: 30px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 350px; /* Max width for each card */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-
-.group-title {
-    color: #111827;
-    font-weight: 700;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.skill-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.skill-item {
-    color: #374151;
-    font-weight: 400;
-    font-size: 16px;
-    background: #EEF2FF; /* Light blue background for each skill */
-    padding: 8px 12px;
-    border-radius: 6px;
-}
-
-/* Reusing footer and header styles from main.css */
-/* No specific styles needed here, as they are inherited from main.css */
-
-/* Responsive Adjustments for About Page */
-@media (min-width: 768px) {
-    .hobby-details {
-        flex-direction: row; /* Side-by-side on larger screens */
-        justify-content: center;
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .hobby-image-placeholder,
-    .hobby-list-placeholders {
-        width: 50%; /* Each takes half width */
-        max-width: none; /* Remove max-width constraint for flex */
-    }
-}
-
-@media (max-width: 1200px) {
-    .about-page-content {
-        padding: 60px 40px;
-    }
-}
-
-@media (max-width: 860px) {
-    .about-page-content {
-        padding: 40px 20px;
-    }
-
-    .about-page-title {
-        font-size: 38px;
-    }
-
-    .about-info-group {
-        flex-direction: column; /* Stack info items */
-        gap: 16px;
-    }
-
-    .skill-experience-group {
-        max-width: 100%; /* Full width for cards on smaller screens */
-        padding: 25px;
-    }
-
-    .skills-goals-section {
-        padding: 40px 20px;
-        gap: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .about-page-title {
-        font-size: 32px;
-    }
-
-    .section-subtitle {
-        font-size: 18px;
-    }
-
-    .about-info-item {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
-
-    .group-title {
-        font-size: 20px;
-    }
-
-    .skill-item {
-        font-size: 14px;
-    }
-}
 body {
     font-family: 'Inter', sans-serif;
     font-size: 16px; /* Base font size for better scaling */
@@ -1165,6 +851,301 @@ body {
     font-size: 14px;
 }
 
+/* Specific Styles for About Page */
+
+/* Make sure the about page content is centered and has appropriate padding */
+.about-page-content {
+    width: 100%;
+    padding: 80px; /* Consistent padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px; /* Space between main sections */
+    background-color: #F9FAFB; /* Light background for the page */
+}
+
+/* About Hero Section */
+.about-hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    max-width: 900px;
+}
+
+.about-hero-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.about-info-group {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-info-item {
+    background: #667EEA;
+    color: #FFFFFF;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.about-profile-image {
+    width: 160px;
+    height: 160px;
+    background: url('https://via.placeholder.com/160') no-repeat center center / cover; /* Placeholder image */
+    border-radius: 50%;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex; /* For centering content inside if any */
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-circle {
+    /* If you have a specific design for the circle within the image */
+}
+
+.background-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.section-subtitle {
+    color: #111827;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.background-text-placeholders {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.text-placeholder {
+    width: 100%;
+    height: 12px;
+    background-color: #E5E7EB;
+    border-radius: 4px;
+}
+
+.text-placeholder:nth-child(even) {
+    width: 95%; /* Varying line lengths for realism */
+}
+.text-placeholder:nth-child(odd) {
+    width: 98%;
+}
+.text-placeholder:last-child {
+    width: 80%;
+}
+
+
+.about-page-title {
+    color: #111827;
+    font-weight: 800;
+    font-size: 48px;
+    margin-top: 20px;
+}
+
+.hobby-section {
+            margin-top: 60px;
+            padding: 0 20px;
+        }
+
+        .hobby-section .section-subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .hobby-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hobby-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .hobby-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hobby-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .hobby-card:hover .hobby-card-image img {
+            transform: scale(1.05);
+        }
+
+        .hobby-card-content {
+            padding: 20px;
+        }
+
+        .hobby-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .hobby-card-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .hobby-card-icon {
+            width: 40px;
+            height: 40px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        /* Placeholder image styles for demo */
+        .hobby-placeholder-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .hobby-placeholder-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .hobby-placeholder-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .hobby-placeholder-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hobby-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .hobby-card-image {
+                height: 180px;
+            }
+        }
+/* Skills and Goals Section */
+.skills-goals-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allow groups to wrap */
+    justify-content: center;
+    gap: 40px; /* Space between groups */
+    padding: 60px 0;
+    background-color: #FFFFFF; /* White background for this section */
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.03); /* Subtle shadow at the top */
+}
+
+.skill-experience-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #F9FAFB;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 350px; /* Max width for each card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.group-title {
+    color: #111827;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skill-item {
+    color: #374151;
+    font-weight: 400;
+    font-size: 16px;
+    background: #EEF2FF; /* Light blue background for each skill */
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
     .header,
@@ -1190,7 +1171,12 @@ body {
         border-radius: 0 0 12px 12px; /* Adjust border radius */
         width: 100%; /* Take full width when stacked */
     }
+
+    .about-page-content {
+        padding: 60px 40px;
+    }
 }
+
 
 @media (max-width: 860px) {
     .header {
@@ -1311,6 +1297,29 @@ body {
         align-items: center;
         text-align: center;
     }
+
+    .about-page-content {
+        padding: 40px 20px;
+    }
+
+    .about-page-title {
+        font-size: 38px;
+    }
+
+    .about-info-group {
+        flex-direction: column; /* Stack info items */
+        gap: 16px;
+    }
+
+    .skill-experience-group {
+        max-width: 100%; /* Full width for cards on smaller screens */
+        padding: 25px;
+    }
+
+    .skills-goals-section {
+        padding: 40px 20px;
+        gap: 30px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1353,5 +1362,26 @@ body {
 
     .cta-title {
         font-size: 24px;
+    }
+
+    .about-page-title {
+        font-size: 32px;
+    }
+
+    .section-subtitle {
+        font-size: 18px;
+    }
+
+    .about-info-item {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .group-title {
+        font-size: 20px;
+    }
+
+    .skill-item {
+        font-size: 14px;
     }
 }
