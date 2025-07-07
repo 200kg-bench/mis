@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/about.css" rel="stylesheet" />
+    <title>Joel Chan - About Me</title>
+</head>
+<style>
+    /* General section styling */
+    .hobby-section {
+        margin-top: 60px;
+        padding: 0 20px; /* Consistent horizontal padding */
+        max-width: 1200px; /* Center content */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hobby-section .section-subtitle {
+        font-size: 28px; /* Larger for a main section title */
+        font-weight: 700; /* Bolder */
+        color: #1a1a1a;
+        margin-bottom: 40px; /* More space below subtitle */
+        display: block;
+        text-align: center; /* Center the subtitle */
+    }
+
+.hobby-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: auto auto; /* Two automatic rows based on content */
+    gap: 20px; /* Adjust gap as needed */
+    max-width: 600px; /* Adjust max-width to contain the 2x2 grid */
+    margin: 0 auto; /* Center the grid */
+}    /* Individual Hobby Card */
+    .hobby-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08); /* Adjusted shadow */
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        /* Removed flex properties here as there's only one child now */
+    }
+
+    .hobby-card:hover {
+        transform: translateY(-10px); /* More pronounced lift */
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    }
+
+    /* Hobby Card Image Container - This will now be the main content of the card */
+    .hobby-card-image {
+        width: 100%;
+        height: 250px; /* Increased height for a more prominent image */
+        position: relative;
+        overflow: hidden;
+        background-color: #f0f0f0; /* Fallback background for image container */
+        display: flex; /* Use flex to center placeholder text/content */
+        align-items: center;
+        justify-content: center;
+        /* Removed padding here, as the image should fill the div */
+    }
+
+    .hobby-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures image covers the area without distortion */
+        transition: transform 0.3s ease;
+    }
+
+    .hobby-card:hover .hobby-card-image img {
+        transform: scale(1.08); /* Slightly more zoom on hover */
+    }
+
+    /* REMOVED STYLES RELATED TO hobby-card-content, hobby-card-title, hobby-card-description, hobby-card-icon */
+    /* If you still had .hobby-card-content, .hobby-card-title, etc. in your main.css or about.css,
+       you might want to remove them or ensure they don't apply here. */
+
+    /* Placeholder image backgrounds (for when no actual image is used) */
+    .hobby-card-image.placeholder-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-weight: 600; font-size: 16px; }
+    .hobby-card-image.placeholder-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; font-weight: 600; font-size: 16px; }
+    .hobby-card-image.placeholder-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; font-weight: 600; font-size: 16px; }
+    .hobby-card-image.placeholder-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; font-weight: 600; font-size: 16px; }
+    .hobby-card-image.placeholder-5 { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: white; font-weight: 600; font-size: 16px; }
+    .hobby-card-image.placeholder-6 { background: linear-gradient(135deg, #8A2BE2 0%, #4B0082 100%); color: white; font-weight: 600; font-size: 16px; }
+
+    /* Responsive design */
+    @media (max-width: 1024px) {
+        .hobby-cards-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Two columns on tablets */
+            gap: 25px;
+        }
+        .hobby-section .section-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        .hobby-card-image {
+            height: 200px; /* Adjusted height for tablets */
+        }
+    }
+
+    @media (max-width: 768px) {
+           .hobby-cards-grid {
+        grid-template-columns: 1fr; /* Back to a single column on smaller screens for better mobile view */
+        grid-template-rows: auto;
+        max-width: 400px; /* Adjust max-width for single column */
+    }
+        .hobby-section {
+            padding: 0 15px; /* Reduced horizontal padding */
+            margin-top: 40px;
+        }
+        .hobby-section .section-subtitle {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+        .hobby-card-image {
+            height: 180px; /* Further reduced height for mobile */
+        }
+    }
+</style>
+
+<body>
+    <div class="page-container">
+        <header class="header">
+            <div class="header-logo">
+                <div class="logo-circle">
+                    <span class="logo-initials">JC</span>
+                </div>
+                <span class="logo-name">Joel Chan</span>
+            </div>
+            <nav class="header-nav">
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="casestudy.html" class="nav-link">Case Studies</a>
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="contact-button">
+                    <span class="contact-text"><a href="contact.html">Contact Me</a></span>
+                </div>
+            </nav>
+        </header>
+
+        <main class="about-page-content">
+            <section class="about-hero-section">
+                </section>
+
+            <section class="hobby-section">
+                <span class="section-subtitle">User Journey</span>
+                    <span>This course has thought me to use How Might We question</span>
+                    
+
+                <div>
+                    <span>By Using How Might We question i was able to become a better UX/UI designer</span>
+                </div>
+                <div>
+                    <span>This course has also thought me how to evuluate my POV so that it will eventually lead to my HIGH-FI prototype and now my Portfolio you are seeing now, it is not the best but it is something i made</span>
+                </div>
+            
+                <div class="hobby-cards-grid">
+
+                    <div class="hobby-card">
+                        <div class="hobby-card-image">
+                            <img src="css/image/6.png" alt="Photography Hobby">
+                        </div>
+                    </div>
+
+                    <div class="hobby-card">
+                        <div class="hobby-card-image">
+                            <img src="css/image/7.png" alt="Hiking Hobby">
+                        </div>
+                    </div>
+
+                    <div class="hobby-card">
+                        <div class="hobby-card-image">
+                            <img src="css/image/8.png" alt="Reading Hobby">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-circle dark">
+                            <span class="logo-initials">JC</span>
+                        </div>
+                        <span class="logo-name white">Joel Chan</span>
+                    </div>
+                    <span class="footer-description">UX Designer passionate about creating meaningful digital experiences through user-centered design and innovative technology.</span>
+                    <div class="social-links">
+                        <div class="social-icon-box">
+                            <div class="social-icon icon-linkedin">
+                                <div class="icon-sq-brdr"></div>
+                                <div class="icon-vert-bar"></div>
+                                <div class="icon-circle-sm"></div>
+                            </div>
+                        </div>
+                        <div class="social-icon-box">
+                            <div class="social-icon icon-github">
+                                <div class="icon-body"></div>
+                                <div class="icon-head"></div>
+                            </div>
+                        </div>
+                        <div class="social-icon-box">
+                            <div class="social-icon icon-dribbble">
+                                <div class="icon-circle-lg"></div>
+                                <div class="icon-arc-wide"></div>
+                                <div class="icon-arc-narrow"></div>
+                                <div class="icon-line-diag"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-links">
+                        <span class="links-title">Quick Links</span>
+                        <div class="link-list">
+                            <a href="#" class="footer-link">About</a>
+                            <a href="#" class="footer-link">Case Studies</a>
+                            <a href="#" class="footer-link">Blog</a>
+                            <a href="#" class="footer-link">Contact</a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <span class="links-title">Resources</span>
+                        <div class="link-list">
+                            <a href="#" class="footer-link">Resume</a>
+                            <a href="#" class="footer-link">Portfolio</a>
+                            <a href="#" class="footer-link">Process</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom-text">
+                <span class="copyright-text">© 2024 Joel Chan. All rights reserved.</span>
+                <span class="design-credit">Designed & Developed with ❤️</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
